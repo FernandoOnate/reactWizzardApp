@@ -1,4 +1,11 @@
 import React from 'react';
+export function AdiosMundo() {
+    return (
+        <>
+            <code>Adiós mundo desde otro componente</code>
+        </>
+    );
+}
 export default function HolaMundo() {
     return (
         <div>

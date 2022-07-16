@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import HolaMundo from './components/HolaMundo'
+import HolaMundo, {AdiosMundo} from './components/HolaMundo'
 export function Saludo() {
   return (
     <p>Hola, este es un saludo desde un nuevo componente en el componente App</p>
@@ -15,6 +15,7 @@ function App() {
         <p>Vamos a aprender react desde 0. Hola mundo.</p>
         <HolaMundo />
         <Saludo />
+        <AdiosMundo />
         <a
           className="App-link"
           href="https://reactjs.org"
