@@ -1,42 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-import HolaMundo, { AdiosMundo } from './components/HolaMundo';
-import SaludarProps from './components/Saludar';
-export function Saludo() {
-  return (
-    <p>Hola, este es un saludo desde un nuevo componente en el componente App</p>
-  );
-}
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Button, Stack, Row, Col,Container } from "react-bootstrap";
+import FormWizzard from "./components/FormWizzard";
+
 function App() {
-  
-  // const userName = 'Fernando';
-  // const age = '24';
-   const user = {
-    nombre: 'Fernando oñate',
-    edad: 24,
-    color:'Blue'
-  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {/* <h1>Primeras interacciones con react, esto es un h1</h1> */}
-        {/* <p>Vamos a aprender react desde 0. Hola mundo.</p> */}
-        {/* <HolaMundo /> */}
-        {/* <Saludo /> */}
-        {/* <SaludarProps nombre="Fernando Oñate" edad="24"/> */}
-        {/* <SaludarProps nombre="Peppa Pig" edad="12"/> */}
-        <SaludarProps nombre={user.nombre} edad={user.edad} color={user.color}/>
-        {/* <AdiosMundo /> */}
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Aprender react.
-        </a> */}
-      </header>
+      <Router basename="/react-app">
+        <Stack direction="horizontal" gap={2}>
+          <Link to="/">
+            <Button>Ir a Home</Button>
+          </Link>
+          <Link to="/test-wizzard-form">
+            <Button>Formuladio wizzard de prueba</Button>{" "}
+          </Link>
+        </Stack>
+        <Routes>
+          <Route path="/test-wizzard-form" element={<FormWizzard />} />
+          <Route path="/" />
+        </Routes>
+      </Router>
     </div>
   );
 }
