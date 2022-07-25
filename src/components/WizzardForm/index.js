@@ -9,6 +9,15 @@ export default function WizzardForm(props) {
   //este vector contiene los titulos de cada formulario
   const FormTitles = ["Sign Up", "Personal Info", "Other Info"];
 
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    username: '',
+    fColor: '',
+    lastname: '',
+    phone:0
+  });
+
   // this state variable contains the number of the current page
   // esta variable de estado contiene el número actual de la página
   const [page, setPage] = useState(0);
@@ -17,10 +26,14 @@ export default function WizzardForm(props) {
   // esta variable contiene el estado de la validacion del formulario
   const [validated, setValidated] = useState(false);
 
+  // this state variable allows to know if the form is validated so it can enable the next button
+  // esta variable de estado nos permite deshabilitar o habiliar el botón de next
+  const [allowNextButton, setAllowNextButton] = useState(false);
+
   // this arrow function handle the submit event when the submit button is pressed
   // esta funcion flecha controla el evento de submit cuando el botón de submit es enviado
   const handleSubmit = (event) => {
-    alert('Seguro k deseas enviar los datos?');
+    alert('Seguro que deseas enviar los datos?');
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -28,6 +41,10 @@ export default function WizzardForm(props) {
     }
     setValidated(true);
   };
+  // this arrow function disable the next button respect to error form state
+  const desactivateNextButton = () => {
+  }
+
 
   return (
     <div className="form-container">
