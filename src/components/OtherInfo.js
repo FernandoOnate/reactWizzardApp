@@ -17,6 +17,7 @@ export default function OtherInfo({ dataForm, setDataForm }) {
           We'll never share your email with anyone else.
         </Form.Text> */}
       </Form.Group>
+      
       <Form.Group className="mb-3" controlId="favoriteAnimal">
         <Form.Label>Your favorite animal:</Form.Label>
         <Form.Control
