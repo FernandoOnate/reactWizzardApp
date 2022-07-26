@@ -9,13 +9,17 @@ export default function WizzardForm(props) {
   //este vector contiene los titulos de cada formulario
   const FormTitles = ["Sign Up", "Personal Info", "Other Info"];
 
+  //this state variable contains the form data from the each input
+  //esta variable contiene los datos de cada input del formulario
   const [formData, setFormData] = useState({
     email: '',
     password: '',
     username: '',
-    fColor: '',
+    name: '',
     lastname: '',
-    phone:0
+    phone: 0,
+    fColor: '',
+    fAnimal:''
   });
 
   // this state variable contains the number of the current page
@@ -45,7 +49,6 @@ export default function WizzardForm(props) {
   const desactivateNextButton = () => {
   }
 
-
   return (
     <div className="form-container">
       <Form
@@ -55,8 +58,13 @@ export default function WizzardForm(props) {
         className="Form"
         autoComplete="off"
       >
-        <WizzardFormHeader FormTitlesArray={FormTitles} CurrentPage={page} />
-        <WizzardFormBody CurrentPage={page} />
+        <WizzardFormHeader
+          FormTitlesArray={FormTitles}
+          CurrentPage={page} />
+        <WizzardFormBody
+          CurrentPage={page}
+          FormData={formData}
+          onSetFormData={setFormData} />
         <WizzarFormFooter
           handleSubmitForm={(event) => handleSubmit(event)}
           page={page}
