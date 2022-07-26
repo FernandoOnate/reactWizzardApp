@@ -17,7 +17,7 @@ export default function WizzardForm(props) {
     username: "",
     name: "",
     lastname: "",
-    phone: 0,
+    phone: 3,
     fColor: "",
     fAnimal: "",
   });
@@ -33,12 +33,16 @@ export default function WizzardForm(props) {
   // this state variable allows to know if the form is validated so it can enable the next button
   // esta variable de estado nos permite deshabilitar o habiliar el botón de next
   const [allowNextButton, setAllowNextButton] = useState(false);
+  //this state variables allows to know if the input one from the form one is valid or invalid
+  //esta variables de estado permite saber si el input uno del formulario uno es valido o no
+  const [inputOneValid, setInputOneValid] = useState(null);
+  const [inputOneInvalid, setInputOneInValid] = useState(null);
 
   // this arrow function handle the submit event when the submit button is pressed
   // esta funcion flecha controla el evento de submit cuando el botón de submit es enviado
   const handleSubmit = (event) => {
     alert("Seguro que deseas enviar los datos?");
-    event.preventDefault();
+    // event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -58,11 +62,17 @@ export default function WizzardForm(props) {
         className="Form"
         autoComplete="off"
       >
-      <WizzardFormHeader FormTitlesArray={FormTitles} CurrentPage={page} />
+        <WizzardFormHeader FormTitlesArray={FormTitles} CurrentPage={page} />
         <WizzardFormBody
+          formState={validated}
+          onFormState={setValidated}
           CurrentPage={page}
           FormData={formData}
           onSetFormData={setFormData}
+          formOneInputOneValid={inputOneValid}
+          onSetFormOneInputOneValid={setInputOneValid}
+          formOneInputOneInvalid={inputOneInvalid}
+          onSetFormOneInputOneInvalid={setInputOneInValid}
         />
         <WizzarFormFooter
           handleSubmitForm={(event) => handleSubmit(event)}

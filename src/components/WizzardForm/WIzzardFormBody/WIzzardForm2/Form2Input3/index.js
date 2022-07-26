@@ -13,6 +13,7 @@ export default function index(props) {
         onChange={(e) =>
           onSetInputThreeData({ ...inputThreeData, phone: e.target.value })
         }
+        minLength={10}
       />
       <Form.Control.Feedback>Valid number!</Form.Control.Feedback>
       <Form.Control.Feedback type="invalid">

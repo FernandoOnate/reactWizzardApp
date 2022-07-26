@@ -26,14 +26,16 @@ export default function NextButton(props) {
     }
   },[page]);
 
-  const handleOnClickNextButton = () => {
+  const handleOnClickNextButton = (e) => {
     setPage((page) => page + 1);
+    const form = e.currentTarget;
+    console.log(form);
   };
   return (
     <>
       <Button
         type={typeButton}
-        onClick={(event)=>showNextBehavior ? handleOnClickNextButton() : handleSubmit(event)}
+        onClick={(event)=>showNextBehavior ? handleOnClickNextButton(event) : handleSubmit(event)}
         className="next-button"
         variant={variantButton}
       >
