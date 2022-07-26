@@ -12,14 +12,14 @@ export default function WizzardForm(props) {
   //this state variable contains the form data from the each input
   //esta variable contiene los datos de cada input del formulario
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    username: '',
-    name: '',
-    lastname: '',
+    email: "",
+    password: "",
+    username: "",
+    name: "",
+    lastname: "",
     phone: 0,
-    fColor: '',
-    fAnimal:''
+    fColor: "",
+    fAnimal: "",
   });
 
   // this state variable contains the number of the current page
@@ -37,7 +37,8 @@ export default function WizzardForm(props) {
   // this arrow function handle the submit event when the submit button is pressed
   // esta funcion flecha controla el evento de submit cuando el botón de submit es enviado
   const handleSubmit = (event) => {
-    alert('Seguro que deseas enviar los datos?');
+    alert("Seguro que deseas enviar los datos?");
+    event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -46,8 +47,7 @@ export default function WizzardForm(props) {
     setValidated(true);
   };
   // this arrow function disable the next button respect to error form state
-  const desactivateNextButton = () => {
-  }
+  const desactivateNextButton = () => {};
 
   return (
     <div className="form-container">
@@ -58,13 +58,12 @@ export default function WizzardForm(props) {
         className="Form"
         autoComplete="off"
       >
-        <WizzardFormHeader
-          FormTitlesArray={FormTitles}
-          CurrentPage={page} />
+        <WizzardFormHeader FormTitlesArray={FormTitles} CurrentPage={page} />
         <WizzardFormBody
           CurrentPage={page}
           FormData={formData}
-          onSetFormData={setFormData} />
+          onSetFormData={setFormData}
+        />
         <WizzarFormFooter
           handleSubmitForm={(event) => handleSubmit(event)}
           page={page}

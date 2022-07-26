@@ -19,7 +19,7 @@ export default function WizzardFormBody(props) {
         ) : CurrentPage === 2 ? (
           <WizzardForm3
             formThreeData={FormData}
-            setFormThreeData={onSetFormData}
+            onSetFormThreeData={onSetFormData}
           />
         ) : (
           "Not page available"
