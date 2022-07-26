@@ -58,7 +58,7 @@ export default function WizzardForm(props) {
         className="Form"
         autoComplete="off"
       >
-        <WizzardFormHeader FormTitlesArray={FormTitles} CurrentPage={page} />
+      <WizzardFormHeader FormTitlesArray={FormTitles} CurrentPage={page} />
         <WizzardFormBody
           CurrentPage={page}
           FormData={formData}

@@ -5,7 +5,7 @@ export default function WizzarFormFooter(props) {
       <FormButtons
         page={props.page}
         setPage={props.setPage}
-        handleSubmitForm={(event)=>props.handleSubmitForm(event)}
+        handleSubmitForm={(event) => props.handleSubmitForm(event)}
       />
     </>
   );
