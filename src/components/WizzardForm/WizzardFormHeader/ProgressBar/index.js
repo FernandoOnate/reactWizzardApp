@@ -14,15 +14,7 @@ export default function ProgressBarHeader(props) {
               ? "66.66%"
               : currentPage === 2
               ? "99.99%"
-              : "",
-          backgroundColor:
-            currentPage === 0
-              ? "#246C99"
-              : currentPage === 1
-              ? "#249942"
-              : currentPage === 2
-              ? "#622499"
-              : "",
+              : ""
         }}
       ></span>
     </div>
