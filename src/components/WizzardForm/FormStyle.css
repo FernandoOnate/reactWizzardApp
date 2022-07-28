@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* overflow: hidden; */
+}
+
+.form-container {
+    min-height: 100vh;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Form {
+    width: 40%;
+    max-width: 100vh;
+    border-top: 2px solid #106AC5;
+    box-shadow: 0 0 2rem grey;
+    padding: 1rem;
+}
+
+.form-header {
+    width: 100%;
+    margin-top: 0;
+}
+
+.form-title-container {
+    text-align: center;
+    height: 100%;
+}
+
+.form-title {
+    height: 100%;
+    line-height: normal;
+}
+
+input {
+    border: 1.9px solid grey;
+    border-radius: 0 !important;
+}
+
+input:hover {
+    color: #358FF5;
+}
+
+input:focus {
+    border: 1.9px solid black !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 5px !important;
+}
+
+.form-buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+}
+
+.Input-Label {
+    font-weight: bold;
+}
+
+.progress-container {
+    width: 100%;
+    height: 7px;
+    background-color: #C2C2C2;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 0.5em;
+}
+
+.progress-bar {
+    width: 33.33%;
+    background-color: #246C99;
+    color: white;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width:200px) {
+    .next-button {
+        font-size: 0.9em;
+    }
+
+    .prev-button {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width:700px) {
+    .Form {
+        width: 100%;
+    }
+}
