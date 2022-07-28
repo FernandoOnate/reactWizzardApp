@@ -1,7 +1,15 @@
-import React from "react";
+import  React, { useEffect } from "react";
 import { Form, Col } from "react-bootstrap";
-export default function index(props) {
-  const { inputThreeData, onSetInputThreeData } = props;
+export default function Form2Input3(props) {
+  const { formData, onSetFormData, inputThreeValid, setInputThreeValid } =
+    props;
+  useEffect(() => {
+    if (!formData.phone.length) {
+      setInputThreeValid(false);
+    } else {
+      setInputThreeValid(true);
+    }
+  }, [formData.phone, inputThreeValid]);
   return (
     <Form.Group as={Col} md="12" controlId="phone">
       <Form.Label className="Input-Label">Phone number:</Form.Label>
@@ -9,10 +17,10 @@ export default function index(props) {
         type="number"
         placeholder="Your phone"
         required
-        value={inputThreeData.phone}
-        onChange={(e) =>
-          onSetInputThreeData({ ...inputThreeData, phone: e.target.value })
-        }
+        value={formData.phone}
+        onChange={(e) => onSetFormData({ ...formData, phone: e.target.value })}
+        isValid={inputThreeValid}
+        isInvalid={!inputThreeValid}
         minLength={10}
       />
       <Form.Control.Feedback>Valid number!</Form.Control.Feedback>

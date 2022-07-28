@@ -30,13 +30,12 @@ export default function WizzardForm(props) {
   // esta variable contiene el estado de la validacion del formulario
   const [validated, setValidated] = useState(false);
 
-  // this state variable allows to know if the form is validated so it can enable the next button
-  // esta variable de estado nos permite deshabilitar o habiliar el botón de next
-  const [allowNextButton, setAllowNextButton] = useState(false);
-  //this state variables allows to know if the input one from the form one is valid or invalid
-  //esta variables de estado permite saber si el input uno del formulario uno es valido o no
-  const [inputOneValid, setInputOneValid] = useState(null);
-  const [inputOneInvalid, setInputOneInValid] = useState(null);
+  //-------------- FORM ONE VARIABLES---------------------
+  const [formOneStatus, setFormOneStatus] = useState(null);
+  //-------------- FORM TWO VARIABLES---------------------
+  const [formTwoStatus, setFormTwoStatus] = useState(null);
+  //-------------- FORM THREE VARIABLES---------------------
+  const [formThreeStatus, setFormThreeStatus] = useState(null);
 
   // this arrow function handle the submit event when the submit button is pressed
   // esta funcion flecha controla el evento de submit cuando el botón de submit es enviado
@@ -50,8 +49,6 @@ export default function WizzardForm(props) {
     }
     setValidated(true);
   };
-  // this arrow function disable the next button respect to error form state
-  const desactivateNextButton = () => {};
 
   return (
     <div className="form-container">
@@ -64,20 +61,24 @@ export default function WizzardForm(props) {
       >
         <WizzardFormHeader FormTitlesArray={FormTitles} CurrentPage={page} />
         <WizzardFormBody
-          formState={validated}
-          onFormState={setValidated}
           CurrentPage={page}
-          FormData={formData}
+          formData={formData}
           onSetFormData={setFormData}
-          formOneInputOneValid={inputOneValid}
-          onSetFormOneInputOneValid={setInputOneValid}
-          formOneInputOneInvalid={inputOneInvalid}
-          onSetFormOneInputOneInvalid={setInputOneInValid}
+          formOneStatus={formOneStatus}
+          setFormOneStatus={setFormOneStatus}
+          formTwoStatus={formTwoStatus}
+          setFormTwoStatus={setFormTwoStatus}
+          formThreeStatus={formThreeStatus}
+          setFormThreeStatus={setFormThreeStatus}
         />
         <WizzarFormFooter
           handleSubmitForm={(event) => handleSubmit(event)}
           page={page}
           setPage={setPage}
+          formState={validated}
+          formOneStatus={formOneStatus}
+          formTwoStatus={formTwoStatus}
+          formThreeStatus={formThreeStatus}
         />
       </Form>
     </div>

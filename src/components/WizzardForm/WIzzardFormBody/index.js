@@ -4,30 +4,37 @@ import WizzardForm3 from "./WIzzardForm3";
 export default function WizzardFormBody(props) {
   const {
     CurrentPage = 0,
-    FormData,
+    formData,
     onSetFormData,
-    formOneInputOneValid,
-    onSetFormOneInputOneValid,
-    formOneInputOneInvalid,
-    onSetFormOneInputOneInvalid,
+    formOneStatus,
+    setFormOneStatus,
+    formTwoStatus,
+    setFormTwoStatus,
+    formThreeStatus,
+    setFormThreeStatus,
   } = props;
   return (
     <div className="body-container">
       {CurrentPage === 0 ? (
         <WizzardForm1
-          formOneInputOneValid={formOneInputOneValid}
-          onSetFormOneInputOneValid={onSetFormOneInputOneValid}
-          formOneInputOneInvalid={formOneInputOneInvalid}
-          onSetFormOneInputOneInvalid={onSetFormOneInputOneInvalid}
-          formOneData={FormData}
-          onSetFormOneData={onSetFormData}
+          formData={formData}
+          onSetFormData={onSetFormData}
+          formOneStatus={formOneStatus}
+          setFormOneStatus={setFormOneStatus}
         />
       ) : CurrentPage === 1 ? (
-        <WizzardForm2 formTwoData={FormData} onSetFormTwoData={onSetFormData} />
+        <WizzardForm2
+          formData={formData}
+          onSetFormData={onSetFormData}
+          formTwoStatus={formTwoStatus}
+          setFormTwoStatus={setFormTwoStatus}
+        />
       ) : CurrentPage === 2 ? (
         <WizzardForm3
-          formThreeData={FormData}
-          onSetFormThreeData={onSetFormData}
+          formData={formData}
+          onSetFormData={onSetFormData}
+          formThreeStatus={formThreeStatus}
+          setFormThreeStatus={setFormThreeStatus}
         />
       ) : (
         "Not page available"

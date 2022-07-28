@@ -1,20 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { Form, Col, InputGroup } from "react-bootstrap";
 export default function Form1Input1(props) {
-  const { inputThreeData, onSetInput3Form1Data } = props;
-  
-  const [inputThreeValid, setInputThreeValid] = useState(null);
-  const [inputThreeInvalid, setInputThreeInValid] = useState(null);
+  const { formData, onSetFormData, inputThreeValid, setInputThreeValid } =
+    props;
 
   useEffect(() => {
-    if (!inputThreeData.username.length) {
-      setInputThreeInValid(true);
+    if (!formData.username.length) {
       setInputThreeValid(false);
     } else {
-      setInputThreeInValid(false);
       setInputThreeValid(true);
     }
-  }, [inputThreeData.username]);
+  }, [formData.username]);
 
   return (
     <Form.Group as={Col} md="12" controlId="validationCustomUsername">
@@ -23,22 +19,23 @@ export default function Form1Input1(props) {
         <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
         <Form.Control
           type="text"
-          value={inputThreeData.username}
+          value={formData.username}
           placeholder="Username"
           aria-describedby="inputGroupPrepend"
           required
           onChange={(e) => {
-            onSetInput3Form1Data({
-              ...inputThreeData,
+            onSetFormData({
+              ...formData,
               username: e.target.value,
             });
           }}
           isValid={inputThreeValid}
-          isInvalid={inputThreeInvalid}
+          isInvalid={!inputThreeValid}
         />
         <Form.Control.Feedback type="invalid">
           Please choose a username.
         </Form.Control.Feedback>
+        <Form.Control.Feedback>Username is good.</Form.Control.Feedback>
       </InputGroup>
     </Form.Group>
   );
