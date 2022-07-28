@@ -27,7 +27,7 @@ export default function Form1Input1(props) {
         isValid={inputTwoValid}
         isInvalid={!inputTwoValid}
       />
-      <Form.Control.Feedback>Valid password!</Form.Control.Feedback>
+      <Form.Control.Feedback>The password looks good.</Form.Control.Feedback>
       <Form.Control.Feedback type="invalid">
         Please type a valid password.
       </Form.Control.Feedback>

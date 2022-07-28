@@ -21,9 +21,9 @@ export default function Form2Input1(props) {
         isValid={inputOneValid}
         isInvalid={!inputOneValid}
       />
-      <Form.Control.Feedback>Ok, the password is ok.</Form.Control.Feedback>
+      <Form.Control.Feedback>Your name is valid.</Form.Control.Feedback>
       <Form.Control.Feedback type="invalid">
-        Please type a valid password.
+        Please type your name.
       </Form.Control.Feedback>
     </Form.Group>
   );
