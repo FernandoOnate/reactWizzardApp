@@ -5,11 +5,13 @@ export default function PreviousButton(props) {
   const [disableButtonPrev, setDisableButtonPrev] = useState(null);
 
   useEffect(() => {
-    {page === 0 ? setDisableButtonPrev(true) : setDisableButtonPrev(false);}
-  },[page]);
+    {
+      page === 0 ? setDisableButtonPrev(true) : setDisableButtonPrev(false);
+    }
+  }, [page]);
   const handlePreviousButtonClick = () => {
     setPage((prev) => prev - 1);
-  }
+  };
   return (
     <>
       <Button
