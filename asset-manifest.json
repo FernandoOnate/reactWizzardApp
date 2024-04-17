@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/reactwizzardapp/static/css/main.b88c38e1.css",
-    "main.js": "/reactwizzardapp/static/js/main.987fd3e2.js",
-    "static/js/787.48092fee.chunk.js": "/reactwizzardapp/static/js/787.48092fee.chunk.js",
-    "index.html": "/reactwizzardapp/index.html",
-    "main.b88c38e1.css.map": "/reactwizzardapp/static/css/main.b88c38e1.css.map",
-    "main.987fd3e2.js.map": "/reactwizzardapp/static/js/main.987fd3e2.js.map",
-    "787.48092fee.chunk.js.map": "/reactwizzardapp/static/js/787.48092fee.chunk.js.map"
+    "main.css": "/reactWizzardApp/static/css/main.b88c38e1.css",
+    "main.js": "/reactWizzardApp/static/js/main.e9045c65.js",
+    "static/js/787.48092fee.chunk.js": "/reactWizzardApp/static/js/787.48092fee.chunk.js",
+    "index.html": "/reactWizzardApp/index.html",
+    "main.b88c38e1.css.map": "/reactWizzardApp/static/css/main.b88c38e1.css.map",
+    "main.e9045c65.js.map": "/reactWizzardApp/static/js/main.e9045c65.js.map",
+    "787.48092fee.chunk.js.map": "/reactWizzardApp/static/js/787.48092fee.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b88c38e1.css",
-    "static/js/main.987fd3e2.js"
+    "static/js/main.e9045c65.js"
   ]
 }
